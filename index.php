@@ -34,6 +34,29 @@ if(is_int($int)); {
 if(is_string($bool)){
     echo "Строка: $bool";
 }
+echo "<br>";
+
+$a=0123;
+echo $a;
+echo "<br>";
+
+$a=0x1a;
+echo $a;
+echo "<br>";
+
+$c=7e-10;
+$f=3;
+$n=$c+$f;
+echo $n;
+echo "<br>";
+
+
+
+$b=1.2e3;
+echo $b;
+
+
+
 
 
 
