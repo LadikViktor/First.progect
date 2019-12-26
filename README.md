@@ -39,6 +39,15 @@ The my progect to php!
 
 ![Alt-текст](адрес://ссылки.здесь "Заголовок изображения")
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
 |:------------- |:---------------:| -------------:|
