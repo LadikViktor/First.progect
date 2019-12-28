@@ -45,6 +45,7 @@
     $min = min($number);
     echo "Min value: $min <br>";
     echo "Max value: $max <br>";
+    echo "<br>";
 
 
 
