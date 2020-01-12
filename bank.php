@@ -11,11 +11,11 @@
             font-size: 20px;
             font-weight: bold;
             color: black;
-            
+
             margin-top: 100px;
             font-family: Century;
 
-           
+
 
         }
     </style>
@@ -24,19 +24,17 @@
 <body>
 
     <?php
-
-    $deposit = 1000; // - сумма вклада начальная
-    $procent = 0.1; // - процент начисляемый за 1 месяц 
+    $deposit = 1000; // - начальная сумма вклада
+    $procent = 0.1; // - процентная ставка
     for ($month = 1; $month <= 12; $month++) {
         $deposit = ($deposit * $procent) + $deposit;
-
-        echo "{$month} месяц накопления составят = {$deposit};<br/>\n";
+        echo "$month месяц накопления составят = $deposit;<br/>";
     }
     echo "<br>";
     echo "<br>";
     echo "<br>";
-    echo "Сумма на банковском вкладе через заданное количество месяцев составит $deposit";
-    
+    echo "Сумма на банковском вкладе через 12 месяцев = $deposit";
+
     ?>
 
 
