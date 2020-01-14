@@ -27,14 +27,11 @@
     $deposit = 2000; // - начальная сумма вклада
     $procent = 11.5; // - процентная ставка
     for ($month = 1; $month <= 14; $month++) {
-        $deposit = ($deposit + ($deposit * ($procent / 12) * 0.01));
-        echo "$month месяц накопления составят = $deposit;<br/>";
+        $deposit = $deposit + (($deposit * ($procent / 12) / 100));
     }
     echo "<br>";
-    echo "<br>";
-    echo "<br>";
     echo "Сумма на банковском вкладе через 12 месяцев = $deposit";
-
+    echo "<br>";
     ?>
 
 

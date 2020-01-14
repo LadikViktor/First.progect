@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +20,53 @@
         }
     </style>
 </head>
+
 <body>
 
-<?php
+
+
+    <?php
+    //for
+    $deposit = 2000; // - начальная сумма вклада
+    $procent = 11.5; // - процентная ставка
+    for ($month = 1; $month <= 14; $month++) {
+        $deposit = $deposit + (($deposit * ($procent / 12) / 100));
+    }
+    echo "<br>";
+    echo "Сумма на банковском вкладе через 12 месяцев = $deposit";
+    echo "<br>";
+
+
+    //while
+    $deposit = 2000; // - начальная сумма вклада
+    $procent = 11.5; // - процентная ставка
+    $month = 1; // месяцы
+    while ($month <= 14) {
+        $month++;
+        $deposit = $deposit + (($deposit * ($procent / 12) / 100));
+    }
+    echo $deposit;
+    echo "<br>";
+
+
+    // do while
+    $deposit = 2000; // - начальная сумма вклада
+    $procent = 11.5; // - процентная ставка
+    $month = 1; // месяцы
+    do {
+        $deposit = $deposit + (($deposit * ($procent / 12) / 100));
+        $month++;
+    } while ($month <= 14);
+    echo $deposit;
+    echo "<br>";
+
+    ?>
 
 
 
 
-?>
 
 
 </body>
+
 </html>
