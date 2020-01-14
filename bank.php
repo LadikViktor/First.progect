@@ -24,10 +24,10 @@
 <body>
 
     <?php
-    $deposit = 1000; // - начальная сумма вклада
-    $procent = 0.1; // - процентная ставка
-    for ($month = 1; $month <= 12; $month++) {
-        $deposit = ($deposit * $procent) + $deposit;
+    $deposit = 2000; // - начальная сумма вклада
+    $procent = 11.5; // - процентная ставка
+    for ($month = 1; $month <= 14; $month++) {
+        $deposit = ($deposit + ($deposit * ($procent / 12) * 0.01));
         echo "$month месяц накопления составят = $deposit;<br/>";
     }
     echo "<br>";
