@@ -33,7 +33,7 @@
         $deposit = $deposit + (($deposit * ($procent / 12) / 100));
     }
     echo "<br>";
-    echo "Сумма на банковском вкладе через 12 месяцев = $deposit";
+    echo "Сумма на банковском вкладе через 14 месяцев = $deposit";
     echo "<br>";
 
 
@@ -59,6 +59,9 @@
     } while ($month <= 14);
     echo $deposit;
     echo "<br>";
+
+
+
 
     ?>
 
