@@ -15,14 +15,14 @@
     
     function fibonacci($n)
     {
-        $f = [0,1];
+        $f = [0,1,1,2,3,5];
         for ($i = 1; $i < $n; $i++) {
             $f[] = $f[$i] + $f[$i - 1];
         }
         return $f;
     }
     echo "<pre>";
-    print_r(fibonacci(5));
+    print_r(fibonacci(20));
 
 
 

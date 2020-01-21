@@ -11,12 +11,22 @@
             font-size: 20px;
             font-weight: bold;
             color: black;
-            text-align: center;
+            display: flex;
+            justify-content: center;
             margin-top: 100px;
             font-family: Century;
 
+            
 
 
+        }
+
+        table{
+            border: 1px solid black;
+        }
+
+        td{
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -142,23 +152,22 @@
     // echo Test1();
     // echo "<br>";
 
-     $arr=array(1 => 'Иванов', 2 => 'Петров', 3 => '', 4 => '', 5 => '', 6 => '', 7 => '', 8 => '', 9 => '', 10 => 'Сидоров');
-    
-     foreach ($arr as $name)
-     {
-         echo '<tr>
-                  <td>'.$arr[].'</td>
-                //   <td>'.$student['subjects']['math'].'</td>
-                //   <td>'.$student['subjects']['physics'].'</td>
-                //   <td>'.$student['subjects']['chemistry'].'</td>
-                //   <td>'.$student['subjects']['russian'].'</td>
-                  <td></td>
-         </tr>';
-     }
-     ?>
-       ?>
-     
- 
+    $arr = array(1 =>'Иванов', 2 => 'Петров', 3 => 'Смирнов', 4 => 'Егоров', 5 => 'Андреев');
+    function table($arr)
+    {
+        $str = "<table>\n";
+        foreach ($arr as $key => $value) {
+            $str .= "\t<tr>\n\t\t<td>$key</td>\n\t\t<td>$value</td>\n\t</tr>\n";
+        }
+        $str .= "</table>";
+        return $str;
+    }
+    echo table($arr);
+
+    ?>
+
+
+
 
 
 
