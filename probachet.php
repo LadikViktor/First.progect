@@ -12,11 +12,14 @@
 
     <?php
 
-    $f = file_get_contents('filename_1.txt');
-    echo '<span style="color:green; font-size: 40px;">' . ($f+=1) . '</span>';
+    // $f = file_get_contents('filename_1.txt');
+    // echo '<span style="color:green; font-size: 40px;">' . ($f+=1) . '</span>';
+    // file_put_contents('filename_1.txt', $f);
+
+    echo $f = file_get_contents('filename_1.txt')+1;
     file_put_contents('filename_1.txt', $f);
 
-
+   
 
 
     //     $f = ("filename_1.txt");
@@ -27,13 +30,13 @@
     // fclose($fp);
     // echo $h[0];
 
-        $handle = fopen("http://php.net/", "r");
-        $contents = '';
-        while (!feof($handle)) {
-            $contents .= fread($handle, 1);
-        }
-        fclose($handle);
-        echo $contents;
+    //     $handle = fopen("http://php.net/", "r");
+    //     $contents = '';
+    //     while (!feof($handle)) {
+    //         $contents .= fread($handle, 1);
+    //     }
+    //     fclose($handle);
+    //     echo $contents;
 
 
 
