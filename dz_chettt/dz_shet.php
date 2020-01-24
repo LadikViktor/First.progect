@@ -20,14 +20,6 @@
     fclose($g);
     echo '<span style="color:green; font-size: 40px;">' . $h[0] . '</span>';
 
-    $handle = fopen("http://php.net/", "r");
-    $contents = '';
-    while (!feof($handle)) {
-        $contents .= fread($handle, 1);
-    }
-    fclose($handle);
-    echo $contents;
-
 
 
     ?>
