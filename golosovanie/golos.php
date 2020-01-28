@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="calc.php" method="POST">
-        <input type="text" name= "num1">
-        <input type="text" name= "num2">
-        <input type="submit" value= "OK">
-        
-    </form>
+    <?php
+ $i = $_POST['voting'];
+ $arr= explode(';', file_get_contents('str.txt'));
+ $arr[$i]++;
+ file_put_contents('str.txt', implode(";", $arr));
+    ?>
 </body>
 </html>

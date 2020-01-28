@@ -10,11 +10,29 @@
 
 <body>
     <?php
-    echo $_POST['num1'] * $_POST['num2'];
     $a = $_POST['num1'];
     $b = $_POST['num2'];
-    $c = $_POST['num1'] * $_POST['num2'];
+    $c = $a * $b;
+    echo "$a * $b= $c";
     file_put_contents('calc.txt', "$a * $b = $c". "\n", FILE_APPEND);
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

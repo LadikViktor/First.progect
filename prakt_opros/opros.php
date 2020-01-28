@@ -7,11 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="calc.php" method="POST">
-        <input type="text" name= "num1">
-        <input type="text" name= "num2">
-        <input type="submit" value= "OK">
-        
-    </form>
+    <?php
+ $a = $_POST['num1'];
+ $b = $_POST['user'];
+ echo "$a";
+ echo"<br>";
+ echo "$b";
+ echo"<br>";
+ file_put_contents('data.csv', "$a ; $b". "\n", FILE_APPEND);
+    ?>
 </body>
 </html>
