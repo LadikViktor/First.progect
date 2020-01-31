@@ -12,6 +12,10 @@
  $arr= explode(';', file_get_contents('str.txt'));
  $arr[$i]++;
  file_put_contents('str.txt', implode(";", $arr));
+
+ foreach ($arr as $key => $value) {
+     echo "$key - $value<br>"; 
+ }
     ?>
 </body>
 </html>
