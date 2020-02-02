@@ -26,11 +26,10 @@
             display: flex;
             justify-content: center;
             padding-left: 10px;
-            
-          
+
         }
 
-        .fonresult{
+        .fonresult {
             display: flex;
             flex-direction: column;
             background-color: #DCDCDC;
@@ -53,31 +52,28 @@
     $buf[1] += 1;
     $arr[$ind] = implode(" - ", $buf) . "\n";
     file_put_contents('swoi.txt', $arr);
-
     $sum = 0;
     $array = array(1, 2);
     for ($i = 1; $i < count($arr); $i++) {
         $sum = $sum + explode(" - ", $arr[$i])[1];
     }
-
-
-
     ?>
-     <div class = "fonresult">
-    <h3><?= $arr[0] ?></h3>
-   
-    <div class="result">
-        <?
-        for ($i = 1; $i < count($arr); $i++) {
-            $buf = explode(' - ', $arr[$i]);
 
-            echo   $buf[0] . " - " . round($buf[1] / $sum * 100) . "%";
-            echo "  <div style = 'height: 20px; border: 1px solid;border-radius: 5px; width:" . (100 * $buf[1] / $sum) . "px; background-color: red; display: flex; flex-direction: column; margin: 5px;'></div> ";
-        }
+    <div class="fonresult">
+        <h3><?= $arr[0] ?></h3>
 
-        ?>
+        <div class="result">
+            <?
+            for ($i = 1; $i < count($arr); $i++) {
+                $buf = explode(' - ', $arr[$i]);
 
-    </div>
+                echo   $buf[0] . " - " . round($buf[1] / $sum * 100) . "%";
+                echo "  <div style = 'height: 20px; border: 1px solid;border-radius: 5px; width:" . (100 * $buf[1] / $sum) . "px; background-color: red; display: flex; flex-direction: column; margin: 5px;'></div> ";
+            }
+
+            ?>
+
+        </div>
     </div>
 </body>
 
