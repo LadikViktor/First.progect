@@ -1,3 +1,3 @@
 What subjects would you like to learn more about?
-HTML & CSS - 84
-Javascript - 32
+HTML & CSS - 105
+Javascript - 48

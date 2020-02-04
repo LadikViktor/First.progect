@@ -9,7 +9,7 @@
     <style>
         .result {
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
             font-size: 20px;
             border: 2px solid gray;
             border-radius: 10px;
@@ -41,6 +41,15 @@
             margin-top: 10px;
             padding-left: 10px;
         }
+
+        .str{
+            height: 20px;
+            border: 1px solid;
+            border-radius: 5px;
+            background-color: red;
+    
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -66,9 +75,9 @@
             <?
             for ($i = 1; $i < count($arr); $i++) {
                 $buf = explode(' - ', $arr[$i]);
-
-                echo   $buf[0] . " - " . round($buf[1] / $sum * 100) . "%";
-                echo "  <div style = 'height: 20px; border: 1px solid;border-radius: 5px; width:" . (100 * $buf[1] / $sum) . "px; background-color: red; display: flex; flex-direction: column; margin: 5px;'></div> ";
+                $result = round($buf[1]/ $sum *100); 
+               
+                echo "<div class='str' style = 'width: {$result}px'></div> $buf[0] - $result %<br>";
             }
 
             ?>
