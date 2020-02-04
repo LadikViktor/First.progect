@@ -81,7 +81,7 @@
     <div class='form'>
         <form action="voit.php" method="POST">
             <?php
-            $arr = file('swoi.txt');
+                $arr = file('swoi.txt');
             ?>
             <h3><?= $arr[0] ?></h3>
             <div class="pole">
