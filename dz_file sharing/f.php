@@ -5,6 +5,6 @@ if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
     for ($dir; $name1 = readdir($dir); $dir++) {
         if ($name1 == '.' or $name1 == '..')
             continue;
-        echo ('<a href="file/' . $name1 . '">' . $name1 . '</a><br>');
+        echo ('<a style="font-size: 25px;" href="file/' . $name1 . '">' . $name1 . '</a><br>');
     }
 }
