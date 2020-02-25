@@ -9,4 +9,8 @@
 
 <body>
     <form action="formnext.php" method="get">
-        <texaaaaa </form> </body> </html>
+        <textarea></textarea>
+    </form>
+</body>
+
+</html>
