@@ -18,23 +18,15 @@ for ($dir; $name1 = readdir($dir); $dir++) {
 
             $ras = round((filesize("file/$name1") / 1024) / 1024, 3);
             echo "<a href='file/$name1'><img src= '$icon' width='16' height='16'> $name1 </a> $ras MB
-
             <a href='rename.php?file=$name1'><img src= 'smajliki.jpg' width='16' height='16'></a>
-
-            <a href='del.php?file=$name1'><img src='kis.jpg''width='30' height='30'><br><br>";
-
-           
+            <a href='del.php?file=$name1'><img src='kis.jpg''width='30' height='30'>
+            <a href='area.php?file=$name1'><img src='ves.jpg''width='30' height='30'>
+            <a href='les.php?file=$name1'><img src='37_1500.jpg''width='30' height='30'><br><br>";
         } else {
 
             echo "<a href='file/$name1'><img src= 'im.jpg'width='80' height='80'>$name1</a> $ras MB
             <a href='rename.php?file=$name1'><img src= 'smajliki.jpg' width='16' height='16'></a>
             <a href='derect.php?file=$name1'><img src='kis.jpg''width='30' height='30'><br><br>";
-
-            
         }
-
-        }
+    }
 }
-
-
-
