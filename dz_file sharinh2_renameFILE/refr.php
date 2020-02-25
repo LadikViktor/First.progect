@@ -4,7 +4,7 @@ $dir = opendir('file/');
 for ($dir; $name1 = readdir($dir); $dir++) {
     if ($name1 != '.' and $name1 != '..') {
         if (!is_dir("file/$name1")) {
-            switch (explode('.', $name1[1])) {
+            switch (explode('.', $name1)[1]) {
                 case 'docx':
                     $icon = 'a93cb.jpg';
                     break;
