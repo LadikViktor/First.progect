@@ -11,13 +11,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<style>
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    
+}
 
-<body>
-    <form action="f.php" enctype="multipart/form-data" method="post">
+</style>
+
+<body class="bg-dark ">
+    <form class="d-flex align-items-start flex-column bd-highlight mb-3"  action="f.php" enctype="multipart/form-data" method="post">
         <input name="MAX_FILE_SISE" type="hidden" value="3000000">
-        Отправить этот файл:
-        <input name="userfile" type="file">
-        <input type="submit" value="Отправить">
+    <span class="text-success mt-4 ml-2">Выбрать файл:</span>
+                <span class="btn btn-outline-warning btn-file ml-2"><input  name="userfile" type="file">Выберите файл</span>
+              
+        <span class="text-success mt-4 ml-2">Отправить этот файл:</span>
+        <input class="btn btn-outline-primary ml-2" type="submit" value="Отправить">
     </form>
 
     <!-- Optional JavaScript -->

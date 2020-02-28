@@ -13,14 +13,14 @@
 
 <body>
     <form action="formnext.php" method="POST">
-        <textarea rows="20" cols="200" name="text"><?= htmlspecialchars(file_get_contents('file/' . $_GET['file'])) ?></textarea><br>
+        <textarea class="m-2 bg-info text-white" rows="20" cols="200" name="text"><?= htmlspecialchars(file_get_contents('file/' . $_GET['file'])) ?></textarea><br>
 
-        <input class="btn btn-outline-danger" type="submit" value="Save"><br>
+        <input class="btn btn-outline-danger ml-3" type="submit" value="Save"><br>
         <input type="hidden" name="fileName" value='<?= $_GET['file'] ?>'><br>
     </form>
 
     <form action="refr.php" method="GET">
-        <input class="btn btn-primary" type="submit" value="BACK">
+        <input class="btn btn-outline-success ml-3" type="submit" value="BACK">
     </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
