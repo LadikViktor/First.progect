@@ -1,7 +1,14 @@
 <?php
-if (preg_match('/д[\W0-9_]*у[\W0-9_]*р[\W0-9_]*а[\W0-9_]*к[\W0-9_]*/i', $_POST['usermail'])) {
-    file_get_contents('ban.txt', $_POST['usermail']);
-echo 'У нас запрещен мат, замените слово д**ак';
-} else {
-echo 'НЕТ';
+$arr_words = file('ban.txt');
+foreach ($arr_words as &$word) {
+   $word = trim($word);
 }
+$words = implode('|',$arr_words);
+if (preg_match("/$words/ui", $_POST['usermail'])) {
+    echo 'У нас запрещен мат';
+} else {
+    echo 'Отлично';
+}
+
+
+
