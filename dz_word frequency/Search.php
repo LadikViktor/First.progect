@@ -6,5 +6,5 @@ foreach ($mathes[0] as $_POST['text']) {
 }
 
 foreach ($arr as $value => $key) {
-    echo $value . " - " . $key . " раза" . "<br>";
+    echo "<span style='color:green; font-size:20px;'>$value</span>" . " - " . "<span style='color:red; font-size:25px;'>$key  раз  <br>  </span>";
 }
