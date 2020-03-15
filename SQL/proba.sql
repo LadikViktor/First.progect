@@ -42,8 +42,7 @@ FROM payroll
 Order by Salary DESC;
 
 -- Отсортировать по депортаментам в алфавиктном порядке и по зп в порядке убывания
-SELECT *
-FROM payroll
+SELECT *FROM payroll
 Order by Department ASC,
 Salary DESC;
 
