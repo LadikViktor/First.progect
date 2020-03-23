@@ -7,10 +7,13 @@
 -- Версия сервера: 8.0.12
 -- Версия PHP: 7.2.10
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
+SET SQL_MODE
+= "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT
+= 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone
+= "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -28,9 +31,12 @@ SET time_zone = "+00:00";
 -- Структура таблицы `goods`
 --
 
-CREATE TABLE `goods` (
-  `id` int(11) NOT NULL,
-  `Name` varchar(100) NOT NULL,
+CREATE TABLE `goods`
+(
+  `id` int
+(11) NOT NULL,
+  `Name` varchar
+(100) NOT NULL,
   `Price` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -38,12 +44,36 @@ CREATE TABLE `goods` (
 -- Дамп данных таблицы `goods`
 --
 
-INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(1, 'Milk', 6);
-INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(3, 'Bread', 8);
-INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(4, 'Oil', 2);
-INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(5, 'Water', 5);
-INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(6, 'beer', 2);
-INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(7, 'meat', 2);
+INSERT INTO `goods` (`
+id`,
+`Name
+`, `Price`) VALUES
+(1, 'Milk', 6);
+INSERT INTO `goods` (`
+id`,
+`Name
+`, `Price`) VALUES
+(3, 'Bread', 8);
+INSERT INTO `goods` (`
+id`,
+`Name
+`, `Price`) VALUES
+(4, 'Oil', 2);
+INSERT INTO `goods` (`
+id`,
+`Name
+`, `Price`) VALUES
+(5, 'Water', 5);
+INSERT INTO `goods` (`
+id`,
+`Name
+`, `Price`) VALUES
+(6, 'beer', 2);
+INSERT INTO `goods` (`
+id`,
+`Name
+`, `Price`) VALUES
+(7, 'meat', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -53,7 +83,8 @@ INSERT INTO `goods` (`id`, `Name`, `Price`) VALUES(7, 'meat', 2);
 -- Индексы таблицы `goods`
 --
 ALTER TABLE `goods`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY
+(`id`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -63,7 +94,8 @@ ALTER TABLE `goods`
 -- AUTO_INCREMENT для таблицы `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int
+(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

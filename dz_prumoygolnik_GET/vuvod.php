@@ -21,7 +21,7 @@
     $s = $_GET['a'] * $_GET['b'];
     echo '<br>';
     echo '<br>';
-       echo '<br>';
+    echo '<br>';
     echo 'Площадь прямоугольника = ', $s, 'px';
     ?>
 
