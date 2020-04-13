@@ -165,7 +165,7 @@
 // echo "<br>";
 
 
-//Фильтрует массив
+// Фильтрует массив
 // echo "<pre>";
 // $a1 = array(1, -2, 3, 4, -5, 6, -7, -8, 9, 10);
 // print_r($a1);
@@ -197,16 +197,16 @@
 
 
 // + 3 элемент в функции и переход по ссылке
-// echo "<pre>";
-// $a1 = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-// print_r($a1);
+echo "<pre>";
+$a1 = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+print_r($a1);
 
-// array_walk($a1, function (&$item, $key, $sp) {
-//     $item = "$key $sp $item";
-// }, "=");
-// print_r($a1);
+array_walk($a1, function (&$item, $key, $sp) {
+    $item = "$key $sp $item";
+}, "=");
+print_r($a1);
 
-// echo "</pre>";
+echo "</pre>";
 
 
 
@@ -229,13 +229,13 @@
 
 
 
-// 
-$msg = "Hello";
+// замыкание с & выдает bye
+// $msg = "Hello";
 
-$test = function () use (&$msg) {
-    echo $msg;
-};
+// $test = function () use (&$msg) {
+//     echo $msg;
+// };
 
-$msg = "bye";
+// $msg = "bye";
 
-$test();
+// $test();
