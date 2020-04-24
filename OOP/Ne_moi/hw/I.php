@@ -1,5 +1,5 @@
 <?php
-class I extends Tag
+class I extends PairTag
 {
     public function html()
     {

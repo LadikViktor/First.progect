@@ -1,5 +1,5 @@
 <?php
-class Input
+class Input extends Tag
 {
     protected $value = '';
     protected $type = 'text';

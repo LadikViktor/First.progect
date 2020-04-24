@@ -1,6 +1,6 @@
 <?php
 
-abstract class Li extends Tag
+abstract class Li extends PairTag
 {
    protected $data;
 

@@ -7,10 +7,7 @@ abstract class Tag
     protected $id;
     protected $innerText;
 
-    public function __construct(string $text = '')
-    {
-        $this->setInnerText($text);
-    }
+
 
     public function setStyle(string $text)
     {
@@ -37,5 +34,4 @@ abstract class Tag
     }
 
     abstract public function html();
-
 }

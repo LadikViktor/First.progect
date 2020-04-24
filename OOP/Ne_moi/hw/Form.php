@@ -1,6 +1,6 @@
 <?php
 
-class Form extends Tag
+class Form extends PairTag
 {
     private $action;
     private $method = "GET";

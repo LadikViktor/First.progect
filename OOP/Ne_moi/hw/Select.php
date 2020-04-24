@@ -1,6 +1,6 @@
 <?php
 
-class Select extends Tag
+class Select extends PairTag
 {
     private $selectData;
     private $name;
