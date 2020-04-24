@@ -1,39 +1,30 @@
 <?php
-class Select extends Form
+
+class Select extends Tag
 {
-    private $option;
-    private $arselect;
-    private $aroption;
+    private $selectData;
+    private $name;
 
-    public function arselect(array $arselect)
+    public function setInnerData(array $selectData)
     {
-        $str = "";
-        foreach ($arselect as $key => $value) {
-            $str .= "$key='$value'";
+        $this->selectData = "";
+
+        foreach ($selectData as $key => $value) {
+            $this->selectData .= "\t<option value='$key'>$value</option>\n";
         }
-        return $this->arselect = $str;
+
+        return $this;
     }
 
-    public function aroption(array $aroption)
+    public function setName($name)
     {
-        $str = "";
-        foreach ($aroption as $key => $value) {
-            $str .= "$key='$value'";
-        }
-        return $this->aroption = $str;
+        $this->name = $name;
+        return $this;
     }
 
-    public function option(array $option)
-    {
-        $str = "";
-        foreach ($option as $key => $value) {
-            $str .= "<option>$value</option>\n";
-        }
-        return $this->option = $str;
-    }
 
-    public function select_()
+    public function html()
     {
-        return "<select $this->arselect> $this->option </option></select>";
+        return "<select id='$this->id' name='$this->name'>\n$this->selectData</select>\n";
     }
 }

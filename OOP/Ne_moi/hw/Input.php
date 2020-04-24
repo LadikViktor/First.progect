@@ -1,13 +1,41 @@
 <?php
-
-use function PHPSTORM_META\type;
-
-class Input extends Form
+class Input
 {
+    protected $value = '';
+    protected $type = 'text';
 
-    public function input1($arr)
+    public function setType(string $type)
     {
-        return "<input type=" . $arr['type'] . "
-         placeholder=" . $arr['placeholder'] . " name=" . $arr['name'] . ">";
+        if (in_array($type, [
+            'text',
+            'button',
+            'submit',
+            'reset',
+            'password',
+            'file',
+            'checkbox'
+        ])) {
+            $this->type = $type;
+        }
+        return $this;
+    }
+
+    public function setValue(string $value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
+    public function setValueType(array $data)
+    {
+        reset($data);
+        $buf = each($data);
+        $this->setType($buf['key'])->setValue($buf['value']);
+        return $this;
+    }
+
+    public function html()
+    {
+        return "<input type = '$this->type' value = '$this->value'>";
     }
 }
