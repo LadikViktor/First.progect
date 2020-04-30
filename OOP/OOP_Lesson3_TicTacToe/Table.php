@@ -28,9 +28,9 @@ class Table
         $str = "";
 
         foreach ($data as $row) {
-            $str .= "<tr>";
+            $str .= "<tr style='color:black;'>";
             foreach ($row as $cell) {
-                $str .= "<td>$cell</td>";
+                $str .= "<td style='border: 1px solid black;width:30px; height:30px; color:white; text-align: center;'>$cell</td>";
             }
             $str .= "</tr>";
         }

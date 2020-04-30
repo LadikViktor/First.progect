@@ -1,24 +1,41 @@
 <?php
-
-class INPUT extends SELECT
+class Input extends Tag
 {
-    public function Description()
-    {
-        return "является одним из разносторонних элементов формы
-         и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем \n";
+    protected $value = '';
+    protected $type = 'text';
 
-        return "имеет атрибут 'name' \n";
+    public function setType(string $type)
+    {
+        if (in_array($type, [
+            'text',
+            'button',
+            'submit',
+            'reset',
+            'password',
+            'file',
+            'checkbox'
+        ])) {
+            $this->type = $type;
+        }
+        return $this;
     }
 
-    public function AtrName()
+    public function setValue(string $value)
     {
-        echo "<br>";
-        return "имеет атрибут 'name' \n";
+        $this->value = $value;
+        return $this;
     }
 
-    public function D()
+    public function setValueType(array $data)
     {
+        reset($data);
+        $buf = each($data);
+        $this->setType($buf['key'])->setValue($buf['value']);
+        return $this;
+    }
 
-        return parent::D();
+    public function html()
+    {
+        return "<input type = '$this->type' value = '$this->value'>";
     }
 }

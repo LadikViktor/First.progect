@@ -1,21 +1,20 @@
 <?php
 
-class UL extends OL
+
+class UL extends Li
 {
-    public function Description()
+    protected $type = "circle";
+
+    public function html()
     {
-        return "устанавливает маркерованный список, \n";
+        return "\n<ul type = '$this->type' $this->style id = '$this->id' $this->class>\n$this->data</ul> ";
     }
 
-    public function D()
+    public function setType(string $type)
     {
-        echo "<br>";
-        return "закрывающийся тег обязателен, \n";
-    }
-
-    public function atributTupe()
-    {
-
-        return parent::atributTupe();
+        if (in_array($type, ["square", "circle", "disk"])) {
+            $this->type = $type;
+        }
+        return $this;
     }
 }

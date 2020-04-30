@@ -29,7 +29,7 @@ class Tictac
     public function putCross(int $i, int $j)
     {
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = 1;
+            $this->map[$i][$j] = '<abbr>&#10006</abbr>';
         }
         return $this;
     }
@@ -37,7 +37,7 @@ class Tictac
     public function putNull(int $i, int $j)
     {
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = 0;
+            $this->map[$i][$j] = '0';
         }
         return $this;
     }

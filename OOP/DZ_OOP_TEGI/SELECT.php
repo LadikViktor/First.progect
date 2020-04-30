@@ -1,16 +1,30 @@
 <?php
 
-class SELECT extends UL
+class Select extends PairTag
 {
-    public function Description()
+    private $selectData;
+    private $name;
+
+    public function setInnerData(array $selectData)
     {
-        return "позволяет создать элемент интерфейса в виде раскрывающегося списка, 
-        а также список с одним или множественным выбором \n";
+        $this->selectData = "";
+
+        foreach ($selectData as $key => $value) {
+            $this->selectData .= "\t<option value='$key'>$value</option>\n";
+        }
+
+        return $this;
     }
 
-    public function D()
+    public function setName($name)
     {
+        $this->name = $name;
+        return $this;
+    }
 
-        return parent::D();
+
+    public function html()
+    {
+        return "<select id='$this->id' name='$this->name'>\n$this->selectData</select>\n";
     }
 }

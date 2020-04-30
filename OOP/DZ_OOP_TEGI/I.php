@@ -1,9 +1,8 @@
 <?php
-
-class I extends Specification
+class I extends PairTag
 {
-    public function Description()
+    public function html()
     {
-        return "устанавливает курсивное начертание шрифта";
+        return "<i>$this->innerText</i> ";
     }
 }

@@ -1,9 +1,8 @@
 <?php
-
-class U extends Specification
+class U extends PairTag
 {
-    public function Description()
+    public function html()
     {
-        return "добавляет почеркивание тексту";
+        return "<u>$this->innerText</u> ";
     }
 }
