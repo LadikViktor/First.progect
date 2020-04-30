@@ -1,10 +1,25 @@
 <?php
-class Textarea extends PairTag
+class TextArea extends Name
 {
+    private $row = 50;
+    private $coll = 50;
 
-    public function textareaa($arr)
+    public function setRow(int $row)
     {
-        return "<textarea name=" . $arr['name'] . " id=" . $arr['id'] . "
-         cols=" . $arr['cols'] . " rows=" . $arr['rows'] . "></textarea> ";
+        $this->row = $row;
+        return $this;
+    }
+
+    public function setColl(int $coll)
+    {
+        $this->coll = $coll;
+        return $this;
+    }
+
+    public function html()
+    {
+        return "<textarea name='$this->name' id='$this->id' 
+        class=''$this->class style='$this->style' coll='$this->coll' 
+        row='$this->row'>$this->innerText</textarea>";
     }
 }

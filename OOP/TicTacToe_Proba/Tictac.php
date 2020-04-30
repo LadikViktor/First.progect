@@ -29,7 +29,7 @@ class Tictac
     public function putCross(int $i, int $j)
     {
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = '<abbr>&#10006</abbr>';
+            $this->map[$i][$j] = "<img src='cross.png'>";
         }
         return $this;
     }
@@ -37,7 +37,7 @@ class Tictac
     public function putNull(int $i, int $j)
     {
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = '0';
+            $this->map[$i][$j] = "<img src='null.png'>";
         }
         return $this;
     }
@@ -48,7 +48,7 @@ class Tictac
         $j = rand(0, $n);
 
         if ($this->available($i, $j)) {
-            $this->map[$i][$j] = '0';
+            $this->map[$i][$j] = "<img src='null.png'>";
 
             return $this;
         }
