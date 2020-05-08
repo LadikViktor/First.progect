@@ -1,17 +1,17 @@
   <?php
-    include 'autoload.php';
+  include 'autoload.php';
 
-    $tic = new Tictac(3);
+  $tic = new Tictac(3);
 
-    $tic->putCross(2, 2);
+  $tic->putCross(2, 2);
 
-    $tic->putRand(2);
+  // $tic->putRand(2);
 
-    // $tic->putNull(1, 1);
+  // $tic->putNull(1, 1);
 
-    $table = new Table();
+  $table = new Table();
 
-    echo $table
-        ->style('2px solid black', '100px', '100px')
-        ->data($tic->map)
-        ->html();
+  echo $table
+    ->style('2px solid black', '100px', '100px')
+    // ->data($tic->map)
+    ->html();

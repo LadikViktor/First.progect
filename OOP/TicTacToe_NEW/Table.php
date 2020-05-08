@@ -1,10 +1,11 @@
-  
 <?php
 class Table
 {
     protected $table;
-    protected $style;
     protected $data;
+    protected $border;
+    protected $width;
+    protected $height;
 
     public function __construct()
     {
@@ -18,9 +19,13 @@ class Table
         return $this;
     }
 
-    public function style(string $style): self
+    public function style(string $border, string $width, string $height): self
     {
-        $this->style = " style='$style'";
+        $this->border = $border;
+        $this->width = $width;
+        $this->height = $height;
+        $this->style = "style='border: $this->border; 
+        width: $this->width; height:$this->height'" . "align='center'";
         return $this;
     }
 

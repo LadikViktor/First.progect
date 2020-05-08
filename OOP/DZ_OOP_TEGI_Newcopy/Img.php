@@ -11,13 +11,13 @@ class Img extends Tag
 
     public function setSrc(string $src)
     {
-
-        $this->src = $src;
+        $this->src = " src='$src'";
         return $this;
     }
 
     public function setHeight(int $height)
     {
+
         $this->height = " height='$height'";
         return $this;
     }
@@ -30,7 +30,7 @@ class Img extends Tag
 
     public function setBorder(int $border)
     {
-        $this->border = $border;
+        $this->border = " border='$border'";
         return $this;
     }
 
@@ -42,7 +42,7 @@ class Img extends Tag
 
     public function html()
     {
-        return "<img src='$this->src' $this->alt" .
-            "$this->height $this->width $this->border>";
+        return "<img$this->src$this->alt" .
+            "$this->height$this->width$this->border>";
     }
 }

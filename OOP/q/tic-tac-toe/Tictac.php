@@ -2,16 +2,23 @@
 
 class Tictac
 {
-    protected $map = [];
+    public $map = [];
 
     public function __construct(int $n = 3)
     {
+        $this->n = $n;
         $this->initMap($n);
     }
 
     public function getMap()
     {
         return $this->map;
+    }
+
+    public function setMap(array $map)
+    {
+        $this->map = $map;
+        return $this;
     }
 
     public function initMap(int $n)
@@ -76,6 +83,14 @@ class Tictac
         if (($winner = $this->checWinByCol()) !== null) {
             return $winner;
         }
+
+        if (($winner = $this->checWinByMainDiag()) !== null) {
+            return $winner;
+        }
+
+        if (($winner = $this->checWinBySecondDiag($this->map)) !== null) {
+            return $winner;
+        }
         return null;
     }
 
@@ -84,15 +99,55 @@ class Tictac
         return $this->checWinByRow($this->transpose($this->map));
     }
 
-    // public function putRand(int $n)
+
+    public function checWinByMainDiag()
+    {
+        $winner = $this->map[0][0];
+
+        $i = 0;
+        foreach ($this->map as $value) {
+            if ($value[$i++] !== $this->map[0][0]) {
+                $winner = null;
+            }
+        }
+        return $winner;
+    }
+
+    
+    public function checWinBySecondDiag()
+    {
+        $n = count($this->map)-1;
+        $winner = $this->map[0][$n];
+
+        $i = $n;
+        foreach ($this->map as $value) {
+            if ($value[$i--] !== $this->map[0][$n]) {
+                $winner = null;
+            }
+        }
+        return $winner;
+    }
+
+
+    // public function checWinBySecondDiag(array $map)
     // {
-    //     $i = rand(0, $n);
-    //     $j = rand(0, $n);
 
-    //     if ($this->available($i, $j)) {
-    //         $this->map[$i][$j] = "<img src='null.png'>";
+    //     $winner = $map[0][2];
 
-    //         return $this;
+    //     for ($i = 0; $i < count($map[$i]); $i++) {
+    //         for ($j = 0; $j < count($map[$i]); $j++) {
+
+    //             if (($j === (count($map[$i]) - 1) && $i == 0) ||
+    //                 ($i === $j && $map[$i][$j] !== null) ||
+    //                 ($i === (count($map[$i]) - 1) && $j == 0)
+    //             ) {
+
+    //                 if ($winner === $map[$i][$j]) {
+    //                     return $winner;
+    //                 }
+    //             }
+    //         }
+    //         return null;
     //     }
     // }
 
