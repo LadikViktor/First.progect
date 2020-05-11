@@ -164,15 +164,15 @@ print_r($tictac->setMap([
     [null, null, null],
     [null, null, null]
 ])
-    ->putRandCross()
-    ->putRandNull()
-    ->putRandCross()
-    ->putRandNull()
-    ->putRandCross()
-    ->putRandNull()
-    ->putRandCross()
-    ->putRandNull()
-    ->putRandCross()
-    ->getMap());
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->getMap());
 
 echo $tictac->checWin();

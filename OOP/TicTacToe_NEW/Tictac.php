@@ -151,6 +151,11 @@ class Tictac
     //     }
     // }
 
+    public function mapSize()
+    {
+        return count($this->map);
+    }
+
     public function available(int $i, int $j): bool
     {
         $av = false;

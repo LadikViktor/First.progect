@@ -34,9 +34,9 @@ class Area
             foreach ($value  as $cell) {
                 $mark = '';
                 if ($cell === 1) {
-                    $mark = "<img  src='cross.png'>";
+                    $mark = "<img src='cross.png'>";
                 } else if ($cell === 0) {
-                    $mark = "<img  src='null.png'>";
+                    $mark = "<img src='null.png'>";
                 }
                 $str .= "<td$this->style>$mark</td>";
             }

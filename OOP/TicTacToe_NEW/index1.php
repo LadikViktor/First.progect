@@ -17,3 +17,4 @@ echo $area
     ->style('1px solid black', '100px', '100px')
     ->setMap($tic->map)
     ->html();
+
