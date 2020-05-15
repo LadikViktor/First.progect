@@ -27,20 +27,20 @@ class Area
 
     public function html()
     {
-        $str = "<table$this->style$this->class>";
+        $str = "<table$this->style$this->class>\n";
 
-        foreach ($this->map  as $value) {
-            $str .= "<tr>";
-            foreach ($value  as $cell) {
-                $mark = '';
+        foreach ($this->map  as $i => $value) {
+            $str .= "\t<tr>\n";
+            foreach ($value  as $j => $cell) {
+                $mark = "<a href='?action=shot&i=$i&j=$j'>  </a>";
                 if ($cell === 1) {
                     $mark = "<img src='cross.png'>";
                 } else if ($cell === 0) {
                     $mark = "<img src='null.png'>";
                 }
-                $str .= "<td$this->style>$mark</td>";
+                $str .= "\t\t<td$this->style>$mark</td>\n";
             }
-            $str .= "</tr>";
+            $str .= "\t</tr>\n";
         }
         $str .= "</table>";
 

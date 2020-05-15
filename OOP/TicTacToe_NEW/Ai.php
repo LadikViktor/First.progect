@@ -1,16 +1,45 @@
 <?php
 
+/*
+Исскуственный интелект для игры
+крестики-нолики
+
+*/
 class Ai extends Tictac
 {
-    private $moves = [];
+    private /*FileInterface*/ $saver;
+
+    public function setSaver(FileInterface $saver)
+    {
+        $this->saver = $saver;
+        return $this;
+    }
+
+    public function saveMap()
+    {
+        if (!empty($this->getMap())) {
+            $this->saver->save($this->getMap());
+            // $_SESSION['map'] = $this->getMap();
+        }
+        return $this;
+    }
+
+    public function loadMap()
+    {
+        $data = $this->saver->load();
+        if (!empty($data)) {
+            $this->setMap($data);
+        }
+        return $this;
+    }
     private function putRand(string $method)
     {
         if ($this->checWin() === null) {
-            $this->searchEmptyCells();
-            if (count($this->moves) > 1) {
-                $move = $this->moves[random_int(0, count($this->moves) - 1)];
+            $moves = $this->searchEmptyCells();
+            if (count($moves) > 1) {
+                $move = $moves[random_int(0, count($moves) - 1)];
             } else {
-                $move = $this->moves[0];
+                $move = $moves[0];
             }
 
             if (!empty($move)) {
@@ -37,14 +66,15 @@ class Ai extends Tictac
 
     public function searchEmptyCells()
     {
-        $this->moves = [];
+        $moves = [];
         foreach ($this->map as $i => $row) {
             foreach ($row as $j => $cell) {
                 if ($cell === null) {
-                    $this->moves[] = ["i" => $i, "j" => $j];
+                    $moves[] = ["i" => $i, "j" => $j];
                 }
             }
         }
+        return $moves;
     }
     /**
      * Игра компьютера самого с собой
