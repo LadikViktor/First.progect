@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Умножение
+ */
 trait MultiplyerTrait
 {
     public function mul($a, $b)
