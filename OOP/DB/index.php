@@ -18,5 +18,5 @@ print_r($table->get());
 
 // echo $table->add(["text" => "Привет", "name" => "Вася"]);
 // echo $table->add(["text" => "HELLO", "name" => "Petya"]);
-$table->edit(5, ["text" => "Всем Привет", "name" => "Рамзан"]);
-// $table->del();
+// $table->edit(5, ["text" => "Всем Привет", "name" => "Рамзан"]);
+$table->del(4);

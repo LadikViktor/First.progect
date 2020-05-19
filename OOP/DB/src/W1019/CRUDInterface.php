@@ -22,5 +22,5 @@ interface CRUDInterface
     /**
      * Delete
      */
-    // public function del(int $id, array $data);
+    public function del(int $id);
 }
