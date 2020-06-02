@@ -17,9 +17,14 @@ class DbTable implements CRUDInterface
 
 
 
-    public function get(): array
+    public function get(int $id = null): array
     {
-        $result = $this->mysqli->query("SELECT * FROM $this->tableName;");
+        if ($id === null) {
+            $result = $this->mysqli->query("SELECT * FROM $this->tableName;");
+        } else {
+            $result = $this->mysqli->query("SELECT * FROM $this->tableName WHERE `id`=$id;");
+        }
+
 
         $array = [];
         while ($row = $result->fetch_assoc()) {

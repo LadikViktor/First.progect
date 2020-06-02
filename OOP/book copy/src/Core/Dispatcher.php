@@ -31,11 +31,14 @@ class Dispatcher
             ),
             $view
         );
-
+        // echo $_SERVER['REQUEST_URI'];
         $action = "action" . $_GET["action"];
+        $controllerData = ['post' => $_POST, 'get' => $_GET];
 
         if (method_exists($controller, $action)) {
-            $controller->{$action}();
+            $controller->{$action}($controllerData);
+        } else {
+            $controller->actionDefault();
         }
 
         // $controller->actionShow();

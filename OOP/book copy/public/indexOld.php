@@ -28,3 +28,5 @@ $view
     ->setTemplate('table')
     ->setData(['table' => $data])
     ->view();
+
+    // http://first.progect/OOP/book%20copy/public/?action=show

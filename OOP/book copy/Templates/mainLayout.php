@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <a href="?action=show">Показать</a>
     <?php
     $this->body();
     ?>
