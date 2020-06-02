@@ -22,20 +22,24 @@ class Square implements SquareInterface
         return $this;
     }
 
+    private function width(): float
+    {
+        return $this->endPoint->getX() - $this->startPoint->getX();
+    }
+
+    private function height(): float
+    {
+        return $this->endPoint->getY() - $this->startPoint->getY();
+    }
+
 
     public function getArea(): float
     {
-        $a = $this->endPoint->getX() - $this->startPoint->getX();
-        $b = $this->endPoint->getY() - $this->startPoint->getY();
-
-        return $a * $b;
+        return $this->width() * $this->height();
     }
 
     public function getPerimeter(): float
     {
-        $a = $this->endPoint->getX() - $this->startPoint->getX();
-        $b = $this->endPoint->getY() - $this->startPoint->getY();
-
-        return ($a + $b) * 2;
+        return ($this->width() + $this->height()) * 2;
     }
 }
